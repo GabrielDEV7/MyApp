@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './Header';
-import Days from './DaysWeek';
+import Days from './BodyApp';
 
 
 export default function AppIndex (){
