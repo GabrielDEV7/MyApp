@@ -7,10 +7,13 @@ import {
   TouchableOpacity,
   Modal,
   SafeAreaView,
+  Alert,
 } from "react-native";
 import { useFonts, Pacifico_400Regular } from "@expo-google-fonts/pacifico";
 import { useState } from "react";
-import ActiveModal from "./appAction/actionModal";
+import  {ActiveModal} from "./appAction/actionModal";
+
+
 
 export default function DaysWeek() {
   const [VisibleModal, setVisibleModal] = useState(false);
@@ -20,7 +23,8 @@ export default function DaysWeek() {
   if (!fontload) {
     return null;
   }
-
+  
+  
   return (
     <View style={styles.container}>
       <View style={styles.item}>
@@ -28,11 +32,11 @@ export default function DaysWeek() {
       </View>
       <View style={styles.bodyItem}>
         <TouchableOpacity
-          activeOpacity={0.8}
+          activeOpacity={0.9}
           style={styles.buttonItem}
           onPress={() => setVisibleModal(true)}
         >
-          <Text style={styles.ItemText}>Selecionar Dia:</Text>
+          <Text style={styles.ItemText}>Selecionar Horário:</Text>
         </TouchableOpacity>
 
         <Modal
@@ -40,7 +44,11 @@ export default function DaysWeek() {
           transparent={true}
           onRequestClose={() => setVisibleModal(false)}
         >
-          <ActiveModal HandleCLose={() => setVisibleModal(false)} />
+          <ActiveModal 
+          HandleCLose={() => setVisibleModal(false)}
+          HandleCoffe={() =>  alert("oi d2")} 
+          HandleSnack={() =>  alert("oi dnv")} 
+          HandleSupper={() =>  alert("ooi")} />
         </Modal>
       </View>
     </View>
@@ -76,10 +84,10 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "#fff",
     borderWidth: 0,
-    padding: 20,
-    borderBottomLeftRadius: 30,
-    borderTopRightRadius: 30,
-    borderBottomRightRadius: 30,
+    padding: 30,
+    borderBottomLeftRadius: 80,
+    borderTopRightRadius: 50,
+    borderBottomRightRadius: 50,
     borderRadius: 0,
     backgroundColor: "#72bab0",
     shadowColor: "rgba(055, 1, 40, 0.9)",

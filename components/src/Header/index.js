@@ -9,7 +9,7 @@ import {
 import { Feather } from "@expo/vector-icons";
 
 const statusBarHeight = StatusBar.currentHeight
-  ? StatusBar.currentHeight + 24
+  ? StatusBar.currentHeight + 22
   : 64;
 
 export default function Header({ name }) {
